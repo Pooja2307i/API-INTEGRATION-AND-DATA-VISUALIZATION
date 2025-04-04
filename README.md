@@ -24,6 +24,10 @@ Task 3: AI Chatbot with NLP
 For Task 3, I built a simple chatbot using Natural Language Processing tools such as NLTK.
 
 Task 4: Machine Learning Model Implementation
+
+*OUTPUT*
+
+![Image](https://github.com/user-attachments/assets/2708a5fe-ece8-4dc0-b07f-67bf9296dee1)
 The final task required building a predictive model using Scikit-learn. I chose a spam detection model where the dataset was trained using the Naive Bayes algorithm.
 
 Tools and Libraries Used:
