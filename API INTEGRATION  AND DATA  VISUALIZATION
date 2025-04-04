@@ -1,0 +1,51 @@
+import requests
+import matplotlib.pyplot as plt
+import datetime
+
+# OpenWeatherMap API key (Replace with your own API key)
+API_KEY = "16c377a7149e288928a3fd03678fe490"
+BASE_URL = "https://api.openweathermap.org/data/2.5/forecast"
+CITY = "bengaluru"
+
+# Fetch weather data
+def fetch_weather_data(city):
+    params = {
+        "q": city,
+        "appid": API_KEY,
+        "units": "metric"  # Get temperature in Celsius
+    }
+    response = requests.get(BASE_URL, params=params)
+    data = response.json()
+    return data
+
+# Extract temperature data
+def extract_temperature_data(data):
+    times = []
+    temperatures = []
+    for entry in data["list"][:8]:  # Get data for the next 8 time intervals (~24 hours)
+        times.append(datetime.datetime.fromtimestamp(entry["dt"]))
+        temperatures.append(entry["main"]["temp"])
+    return times, temperatures
+
+# Plot temperature trend
+def plot_temperature(times, temperatures):
+    plt.figure(figsize=(10, 5))
+    plt.plot(times, temperatures, marker='o', linestyle='-', color='b')
+    plt.xlabel("Time")
+    plt.ylabel("Temperature (°C)")
+    plt.title(f"Temperature Trend for {CITY} (Next 24 Hours)")
+    plt.xticks(rotation=45)
+    plt.grid()
+    plt.show()
+
+# Main function
+def main():
+    data = fetch_weather_data(CITY)
+    if data["cod"] != "200":
+        print("Error fetching data:", data["message"])
+        return
+    times, temperatures = extract_temperature_data(data)
+    plot_temperature(times, temperatures)
+
+if _name_ == "_main_":
+    main()
