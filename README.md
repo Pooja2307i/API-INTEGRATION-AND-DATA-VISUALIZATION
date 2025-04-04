@@ -34,9 +34,3 @@ Overall, the internship was a valuable learning experience that enhanced my tech
 *OUTPUT*
 
 ![Image](https://github.com/user-attachments/assets/2708a5fe-ece8-4dc0-b07f-67bf9296dee1)
-
-![Image](https://github.com/user-attachments/assets/3cb82054-c5a7-4105-b8b3-d72844473bf7)
-
-![Image](https://github.com/user-attachments/assets/ffd7d283-f42b-4025-9828-092d7cde2608)
-
-![Image](https://github.com/user-attachments/assets/9de2a97a-6f32-40ce-bf4c-efd21b7335e5)
